@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
+    // MARK: - PROPERTIES
+    let animals: [Animal] = Bundle.main.decode("animals.json")
+    
     // MARK: - BODY
     var body: some View {
         NavigationView {
@@ -23,6 +26,14 @@ struct ContentView: View {
                             trailing: 0
                         )
                     )
+                
+                ForEach(animals) { animal in
+                    NavigationLink(
+                        destination: AnimalDetailView(animal: animal)
+                    ) {
+                        AnimalListItemView(animal: animal)
+                    }
+                }
             }
             .navigationBarTitle(
                 "Africa",
