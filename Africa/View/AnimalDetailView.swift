@@ -101,6 +101,8 @@ struct AnimalDetailView: View {
                         headingImage: "books.vertical",
                         headingText: "Learn More"
                     )
+                    
+                    ExternalWebLinkView(animal: animal)
                 }
                 .padding(.horizontal)
             }
